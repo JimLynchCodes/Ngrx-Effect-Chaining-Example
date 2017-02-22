@@ -49,7 +49,7 @@ export class SignInSuccess implements Action {
 export class SignInFail implements Action {
   type = MainActionTypes.SIGN_IN_FAIL;
 
-  constructor(payload: {error:any}) { }
+  constructor() { }
 }
 
 export class OpenDbSocketBegin implements Action {
@@ -61,7 +61,7 @@ export class OpenDbSocketBegin implements Action {
 export class OpenDbSocketSuccess implements Action {
   type = MainActionTypes.OPEN_DB_SOCKET_SUCCESS;
 
-  constructor(payload: {someProperty:string, someOtherProperty:boolean}) { }
+  constructor(public payload: any) { }
 }
 
 export class OpenDbSocketFail implements Action {
@@ -73,13 +73,13 @@ export class OpenDbSocketFail implements Action {
 export class CloseDbSocketBegin implements Action {
   type = MainActionTypes.CLOSE_DB_SOCKET_BEGIN;
 
-  constructor(payload: {someProperty:string, someOtherProperty:boolean}) { }
+  constructor() { }
 }
 
 export class CloseDbSocketSuccess implements Action {
   type = MainActionTypes.CLOSE_DB_SOCKET_SUCCESS;
 
-  constructor(payload: {someProperty:string, someOtherProperty:boolean}) { }
+  constructor() { }
 }
 
 export class CloseDbSocketFail implements Action {
@@ -97,7 +97,7 @@ export class SignOutBegin implements Action {
 export class SignOutSuccess implements Action {
   type = MainActionTypes.SIGN_OUT_SUCCESS;
 
-  constructor(payload: {someProperty:string, someOtherProperty:boolean}) { }
+  constructor() { }
 }
 
 export class SignOutFail implements Action {

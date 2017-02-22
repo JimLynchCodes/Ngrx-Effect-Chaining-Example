@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {Increment, MainActions, MainActionTypes, SignInBegin} from "../../../state-management/actions/main.actions";
+import {
+  Increment, MainActions, MainActionTypes, SignInBegin,
+  SignOutBegin, CloseDbSocketBegin
+} from "../../../state-management/actions/main.actions";
 import {GlobalState} from "../../../state-management/states/global.state";
 import {Store} from "@ngrx/store";
 // import * as from mainActionsMainActions;
@@ -23,6 +26,7 @@ export class ButtonsContainerComponent implements OnInit {
 
   signOut($event) {
     console.log('sign out clicked!')
+    this.store.dispatch(new CloseDbSocketBegin());
   }
 
   signIn ($event) {

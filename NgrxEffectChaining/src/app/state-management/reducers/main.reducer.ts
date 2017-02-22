@@ -17,6 +17,15 @@ export const mainStoreReducer: ActionReducer<MainState> =
         }
       }
 
+      case MainActionTypes.OPEN_DB_SOCKET_SUCCESS: {
+
+        console.log('reducer handling db socket response: ' + action.payload);
+
+        console.log('action is: ' + JSON.stringify(action));
+
+        return Object.assign({}, state);
+      }
+
       default: {
         return state;
       }
