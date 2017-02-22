@@ -9,7 +9,7 @@ import {switchMap} from "rxjs/operator/switchMap";
 @Injectable()
 export class MainEffects {
 
-  private dbSocket:any = this.af.database.object('/cypherapp/users/Jim')
+  private dbSocket:any = this.af.database.object('/cypherapp/users/Jim');
 
 
   constructor(private action$: Actions, private af:AngularFire) {
@@ -39,8 +39,8 @@ export class MainEffects {
   @Effect() dbOpenSocket$ = this.action$
     .ofType(MainActionTypes.OPEN_DB_SOCKET_BEGIN)
     .switchMap( () =>
-      dbSocket =>
-      switchMap ( payload => {
+      this.dbSocket
+        .switchMap ( payload => {
 
       return Observable.of({type: MainActionTypes.OPEN_DB_SOCKET_SUCCESS})
       })

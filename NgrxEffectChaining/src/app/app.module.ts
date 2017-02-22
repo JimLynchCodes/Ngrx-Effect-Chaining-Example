@@ -25,6 +25,7 @@ import {StoreDevtoolsModule} from "@ngrx/store-devtools";
     StoreModule.provideStore({mainStoreReducer:mainStoreReducer}),
     EffectsModule.run(MainEffects),
     StoreDevtoolsModule.instrumentOnlyWithExtension(),
+
   ],
   providers: [],
   bootstrap: [AppComponent]
