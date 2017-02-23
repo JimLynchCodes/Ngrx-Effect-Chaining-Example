@@ -1,29 +1,26 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
-
-import { AppComponent } from './app.component';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {FormsModule} from '@angular/forms';
+import {HttpModule} from '@angular/http';
+import {MaterialModule} from '@angular/material';
+import {AppComponent} from './app.component';
 import {MainEffects} from "./state-management/effects/main.effects";
 import {EffectsModule} from "@ngrx/effects";
-import { ButtonsContainerComponent } from './routes/main/buttons-container/buttons-container.component';
-import { ButtonsComponent } from './routes/main/buttons/buttons/buttons.d.component';
+import {ButtonsContainerComponent} from './routes/main/buttons-container/buttons-container.s.component.ts';
+import {ButtonsComponent} from './routes/main/buttons/buttons/buttons.d.component';
 import {StoreModule} from "@ngrx/store";
 import {mainStoreReducer} from "./state-management/reducers/main.reducer";
 import {StoreDevtoolsModule} from "@ngrx/store-devtools";
 import {AngularFireModule} from "angularfire2/angularfire2";
 import {AuthProviders, AuthMethods, firebaseAuthConfig} from "angularfire2/index";
 
-
 export const firebaseConfig = {
-  apiKey: "AIzaSyDwCrWWdMH0nu9y7Dz6gxK0RPXsheO5KeA",
-  authDomain: "qa-cypherapp.firebaseapp.com",
-  databaseURL: "https://qa-cypherapp.firebaseio.com",
-  storageBucket: "qa-cypherapp.appspot.com",
-  messagingSenderId: "78542650498"
-
+  apiKey: "AIzaSyC7ndmL9lFiIwoB_aDRsEZ_T4YEXjEKwm4",
+  authDomain: "chaining-effects-ngrx.firebaseapp.com",
+  databaseURL: "https://chaining-effects-ngrx.firebaseio.com",
+  storageBucket: "chaining-effects-ngrx.appspot.com",
+  messagingSenderId: "118259013468"
 };
-
 
 @NgModule({
   declarations: [
@@ -35,7 +32,8 @@ export const firebaseConfig = {
     BrowserModule,
     FormsModule,
     HttpModule,
-    StoreModule.provideStore({mainStoreReducer:mainStoreReducer}),
+    [MaterialModule],
+    StoreModule.provideStore({mainState: mainStoreReducer}),
     EffectsModule.run(MainEffects),
     StoreDevtoolsModule.instrumentOnlyWithExtension(),
     AngularFireModule.initializeApp(firebaseConfig, {
@@ -46,6 +44,7 @@ export const firebaseConfig = {
   ],
   providers: [],
   bootstrap: [AppComponent,
-   ]
+  ]
 })
-export class AppModule { }
+export class AppModule {
+}

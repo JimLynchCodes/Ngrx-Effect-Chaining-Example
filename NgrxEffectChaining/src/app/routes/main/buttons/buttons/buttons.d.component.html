@@ -1,39 +1,31 @@
-<h1>Ngrx Effect-Chaining Example</h1>
+<md-card class="md-card__bottom-spacing">
+  <h1>Angular 2 Ngrx Effect Chaining / Firebase Logout Example</h1>
+</md-card>
 
-<h1>
-  {{title}}
-</h1>
-
-<div>
-
+<md-card class="regular-text md-card__bottom-spacing">
   <span>
-    Authenticate
+    Authenticated: {{isAuthenticated}}
   </span>
-  |
+  <br><br>
   <span>
-    Pull User Data
+    Jim is {{adjectiveForJim}}.
   </span>
+</md-card>
 
-</div>
+<md-card class="md-card__bottom-spacing buttons-card">
 
+  <button md-raised-button class="good-btn"
+          *ngIf="!isAuthenticated"
+          (click)="signInClick.emit()">Login
+          </button>
 
-<div>
+  <button md-raised-button
+          *ngIf="isAuthenticated"
+          class="good-btn" (click)="signOutClick.emit()">Fun Time Logout
+          </button>
 
-  <span>
-    Close Observable Pipes
-  </span>
-  |
-  <span>
-    Logout
-  </span>
-
-</div>
-
-
-<button (click)="signInClick.emit()">Login</button>
-
-<button (click)="signOutClick.emit()">Logout</button>
-
-
-Some data from the database: "Hi, I'm a string from the database"
-
+  <button md-raised-button class="bad-btn"
+          *ngIf="isAuthenticated"
+          (click)="signOutBadlyClick.emit()">Bad News Logout
+          </button>
+</md-card>

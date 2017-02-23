@@ -1,0 +1,26 @@
+@import '../core/theming/palette';
+@import '../core/theming/theming';
+
+
+@mixin mat-button-toggle-theme($theme) {
+  $foreground: map-get($theme, foreground);
+  $background: map-get($theme, background);
+
+  .mat-button-toggle {
+    color: mat-color($foreground, hint-text);
+  }
+
+  .mat-button-toggle-checked {
+    background-color: mat-color($mat-grey, 300);
+    color: mat-color($foreground, base);
+  }
+
+  .mat-button-toggle-disabled {
+    background-color: map_get($mat-grey, 200);
+    color: mat-color($foreground, disabled-button);
+
+    &.mat-button-toggle-checked {
+      background-color: mat-color($mat-grey, 400);
+    }
+  }
+}

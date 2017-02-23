@@ -1,4 +1,4 @@
-import {Component, OnInit, Output, EventEmitter} from '@angular/core';
+import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-buttons',
@@ -7,12 +7,13 @@ import {Component, OnInit, Output, EventEmitter} from '@angular/core';
 })
 export class ButtonsComponent implements OnInit {
 
+  @Input() isAuthenticated:boolean;
+  @Input() adjectiveForJim:string;
 
   @Output() signInClick = new EventEmitter();
   @Output() signOutClick = new EventEmitter();
+  @Output() signOutBadlyClick = new EventEmitter();
 
-
-  // () closePopup = new EventEmitter();
   constructor() { }
 
   ngOnInit() {

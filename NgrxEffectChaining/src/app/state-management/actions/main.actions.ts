@@ -25,85 +25,99 @@ export const MainActionTypes = {
 export class Increment implements Action {
   type = MainActionTypes.INCREMENT;
 
-  constructor(payload: {someProperty:string, someOtherProperty:boolean}) { }
+  constructor(payload:{someProperty:string, someOtherProperty:boolean}) {
+  }
 }
 
 export class Decrement implements Action {
   type = MainActionTypes.DECREMENT;
 
-  constructor() { }
+  constructor() {
+  }
 }
 
 export class SignInBegin implements Action {
   type = MainActionTypes.SIGN_IN_BEGIN;
 
-  constructor() { }
+  constructor() {
+  }
 }
 
 export class SignInSuccess implements Action {
   type = MainActionTypes.SIGN_IN_SUCCESS;
 
-  constructor(payload: {}) { }
+  constructor(payload:{}) {
+  }
 }
 
 export class SignInFail implements Action {
   type = MainActionTypes.SIGN_IN_FAIL;
 
-  constructor() { }
+  constructor() {
+  }
 }
 
 export class OpenDbSocketBegin implements Action {
   type = MainActionTypes.OPEN_DB_SOCKET_BEGIN;
 
-  constructor(payload: {name:string}) { }
+  constructor() {
+  }
 }
 
 export class OpenDbSocketSuccess implements Action {
   type = MainActionTypes.OPEN_DB_SOCKET_SUCCESS;
 
-  constructor(public payload: any) { }
+  constructor(public payload:any) {
+  }
 }
 
 export class OpenDbSocketFail implements Action {
   type = MainActionTypes.OPEN_DB_SOCKET_FAIL;
 
-  constructor(payload: {someProperty:string, someOtherProperty:boolean}) { }
+  constructor(payload:{someProperty:string, someOtherProperty:boolean}) {
+  }
 }
 
 export class CloseDbSocketBegin implements Action {
   type = MainActionTypes.CLOSE_DB_SOCKET_BEGIN;
 
-  constructor() { }
+  constructor() {
+  }
 }
 
 export class CloseDbSocketSuccess implements Action {
   type = MainActionTypes.CLOSE_DB_SOCKET_SUCCESS;
 
-  constructor() { }
+  constructor() {
+  }
 }
 
 export class CloseDbSocketFail implements Action {
   type = MainActionTypes.CLOSE_DB_SOCKET_FAIL;
 
-  constructor(payload: {someProperty:string, someOtherProperty:boolean}) { }
+  constructor(payload:{someProperty:string, someOtherProperty:boolean}) {
+  }
 }
 
 export class SignOutBegin implements Action {
   type = MainActionTypes.SIGN_OUT_BEGIN;
 
-  constructor() { }
+  constructor() {
+  }
 }
 
 export class SignOutSuccess implements Action {
   type = MainActionTypes.SIGN_OUT_SUCCESS;
 
-  constructor() { }
+  constructor() {
+  }
 }
 
 export class SignOutFail implements Action {
   type = MainActionTypes.SIGN_OUT_FAIL;
 
-  constructor(payload: {error:any}) { }
+  constructor(payload:{error:any}) {
+  }
 }
 
 
@@ -119,8 +133,8 @@ export type MainActions =
     CloseDbSocketBegin |
     CloseDbSocketSuccess |
     CloseDbSocketFail |
-SignOutBegin |
-SignOutSuccess |
-SignOutFail;
+    SignOutBegin |
+    SignOutSuccess |
+    SignOutFail;
 
 

@@ -3,31 +3,41 @@ import {intitialState, MainState} from "../states/main.state";
 import {MainActionTypes} from "../actions/main.actions";
 
 
-export const mainStoreReducer: ActionReducer<MainState> =
-  (state = intitialState, action: Action) => {
+export const mainStoreReducer:ActionReducer<MainState> =
+  (state = intitialState, action:Action) => {
 
     console.log('Action came in! ' + action.type);
 
     switch (action.type) {
 
-      case MainActionTypes.DECREMENT: {
-        console.log('Increment action being handled!');
-        return {
-          counter: state.counter + 1
-        }
+      case MainActionTypes.SIGN_IN_SUCCESS:
+      {
+        return Object.assign({}, state,
+          {isAuthenticated: true});
       }
 
-      case MainActionTypes.OPEN_DB_SOCKET_SUCCESS: {
-
-        console.log('reducer handling db socket response: ' + action.payload);
-
-        console.log('action is: ' + JSON.stringify(action));
-
-        return Object.assign({}, state);
+      case MainActionTypes.OPEN_DB_SOCKET_SUCCESS:
+      {
+        return Object.assign({}, state,
+          {adjectiveForJim: action.payload});
       }
 
-      default: {
+      case MainActionTypes.SIGN_OUT_SUCCESS:
+      {
+        return Object.assign({}, state,
+          {isAuthenticated: false});
+      }
+
+      case MainActionTypes.CLOSE_DB_SOCKET_SUCCESS:
+      {
+        return Object.assign({}, state,
+          {adjectiveForJim: "no longer logged in.."});
+      }
+
+      default:
+      {
         return state;
       }
+            
     }
   };
