@@ -21,7 +21,6 @@
   background: -webkit-linear-gradient(top, #770001 0%,#0f0000 100%); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(to bottom, #770001 0%,#0f0000 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#770001', endColorstr='#0f0000',GradientType=0 );
-  margin-top: 20px;
 }
 
 .regular-text {
@@ -36,9 +35,20 @@
 }
 
 .buttons-card {
-  text-align: center;
-  /*align-content: center;*/
-  /*horiz-align: center;*/
-  /*display: flex;*/
-  /*justify-content: space-between;*/
+    text-align: center;
+    align-content: center;
+    display: flex;
+    justify-content: space-around;
 }
+
+@media (max-width: 500px) {
+  .buttons-card {
+    text-align: center;
+    display: block;
+  }
+
+  .bad-btn {
+    margin-top: 20px;
+  }
+}
+
