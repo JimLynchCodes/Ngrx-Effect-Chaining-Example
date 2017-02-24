@@ -6,15 +6,15 @@ This repo is meant to demonstrate a few things:
 * Canceling an Observable Stream in Ngrx
 * Login / Logout of Firebase *without getting database errors.* 
 
-<img src="./screenshots/NgrxEffectChaining_front_page.png" alt="Ngrx Effects" width="250px"/>
+<img src="./screenshots/NgrxEffectChaining_front_page.png" alt="Ngrx Effects" width="350px"/>
 
 This is a small and focused demo that begins with only a single button, the login button. Once it is clicked the user is anonymously authenticated through Firebase. Then the text in the middle card should update to display some text from the Firebase database. Once logged in, the user is presented with two other buttons.
 
-<img src="./screenshots/NgrxEffectChaining_logout_choices.png" alt="Ngrx Effects" width="250px"/>
+<img src="./screenshots/NgrxEffectChaining_logout_choices.png" alt="Ngrx Effects" width="350px"/>
 
 The red button is the naiive logout approach which basically just calls the firebase logout method. I purposely put this in this project to demonstrate the problem with doing this. Since pulling from Firebase database is basically opening a websocket stream, signing out prevents you from acessing the stream and completely breaks the observable listening to the firebase database. If you have your debugging console open you should see a flood of red text when you click the red logout button.
 
-<img src="./screenshots/NgrxEffectChaining_logout_error.png" alt="Ngrx Effects" width="250px"/>
+<img src="./screenshots/NgrxEffectChaining_logout_error.png" alt="Ngrx Effects" width="350px"/>
 
 On the other hand, the green button first closes the open Firebase database websocket. Then once that has finished the user is logged out. This makes for a very nice, error-free experience. ahhh, how refreshing.
 
@@ -71,7 +71,7 @@ I have found that this is the easiest approach for debugging, maintaining the co
 
 Notice that in the second effect there is no async event taking place and that it's "begin" action and "success" action don't match each other. This is what I call a "chaining effect", and I sometiems refer to it as an "empty effect" beacuse there is no interesting async stuff happening here. It literally just takes in the "CLOSE_DB_SOCKET_SUCCESS" action and returns a "SIGN_OUT_BEGIN" action. When writing our effects in this way we get a very nice "story" of the sequence of actions that are being fired off, and we can see these in the redux chrome extension:
 
-<img src="./screenshots/NgrxEffectChaining_redux_dev_tools.png" alt="Ngrx Effects" width="250px"/>
+<img src="./screenshots/NgrxEffectChaining_redux_dev_tools.png" alt="Ngrx Effects" width="350px"/>
 
 
 ## Usage
