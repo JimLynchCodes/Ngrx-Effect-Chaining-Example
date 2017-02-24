@@ -114,4 +114,4 @@ To get more help on the `angular-cli` use `ng help` or go check out the [Angular
 Not sure if it matters, but I'm using node v6.9.2, npm v3.10.9, and angular cli v1.0.0-beta.28.3
 
 Cheers!
-Jimbo Slicematic
+- Jimbo Slicematic
