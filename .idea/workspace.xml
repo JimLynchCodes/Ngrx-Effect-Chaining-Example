@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="073e6f76-b85e-4213-be92-1e316f5db3a6" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/NgrxEffectChaining/src/app/routes/main/buttons/buttons/buttons.d.component.css" afterPath="$PROJECT_DIR$/NgrxEffectChaining/src/app/routes/main/buttons/buttons/buttons.d.component.css" />
     </list>
     <ignored path="Ngrx-Effect-Chaining-Example.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -581,6 +580,9 @@
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="073e6f76-b85e-4213-be92-1e316f5db3a6" name="Default" comment="" />
@@ -589,15 +591,15 @@
       <option name="presentableId" value="Default" />
       <updated>1487874257883</updated>
       <workItem from="1487874258965" duration="18000" />
-      <workItem from="1487874290988" duration="6915000" />
+      <workItem from="1487874290988" duration="7069000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6933000" />
+    <option name="totallyTimeSpent" value="7087000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1689" y="188" width="1169" height="1000" extended-state="0" />
+    <frame x="-1689" y="188" width="1169" height="1000" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.41376308" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -618,6 +620,14 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
