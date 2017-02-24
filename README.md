@@ -110,6 +110,14 @@ Run `ng github-pages:deploy` to deploy to GitHub Pages.
 
 To get more help on the `angular-cli` use `ng help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
+### Shoutouts 
+
+Thanks to Xavier Lozinguez for helping intitially me understand the quirks of Ngrx and being my only friend in NYC who loves Ngrx as much as I do.
+
+Also big thanks to Andrew Woods for reading my blogs posts, for bringing the "Firebase logout while the socket's still open" issue into the light, and for updating me with his own code which was a huge inspiration for this project. Thanks, buddy.
+
+And finally, thanks to that biznatch I've been talking to who didn't want to go on a date with me at all this week. It just allowed me to spend more time with my main boo, Angular 2.
+
 ### One More Thing
 Not sure if it matters, but I'm using node v6.9.2, npm v3.10.9, and angular cli v1.0.0-beta.28.3
 
