@@ -20,6 +20,9 @@ var main_reducer_1 = require("./state-management/reducers/main.reducer");
 var store_devtools_1 = require("@ngrx/store-devtools");
 var angularfire2_1 = require("angularfire2/angularfire2");
 var index_1 = require("angularfire2/index");
+var compose_1 = require('@ngrx/core/compose');
+var store_2 = require('@ngrx/store');
+var environment_1 = require("../environments/environment");
 exports.firebaseConfig = {
     apiKey: "AIzaSyC7ndmL9lFiIwoB_aDRsEZ_T4YEXjEKwm4",
     authDomain: "chaining-effects-ngrx.firebaseapp.com",
@@ -27,10 +30,19 @@ exports.firebaseConfig = {
     storageBucket: "chaining-effects-ngrx.appspot.com",
     messagingSenderId: "118259013468"
 };
-function combinedReducer() {
-    return { mainState: main_reducer_1.mainStoreReducer };
+var reducers = { mainState: main_reducer_1.mainStoreReducer };
+// const developmentReducer: ActionReducer<MainState> = compose(storeFreeze, combineReducers)(reducers);
+var developmentReducer = compose_1.compose(store_2.combineReducers)(reducers);
+var productionReducer = store_2.combineReducers(reducers);
+function reducer(state, action) {
+    if (environment_1.environment.production) {
+        return productionReducer(state, action);
+    }
+    else {
+        return developmentReducer(state, action);
+    }
 }
-exports.combinedReducer = combinedReducer;
+exports.reducer = reducer;
 var AppModule = (function () {
     function AppModule() {
     }
@@ -46,7 +58,7 @@ var AppModule = (function () {
                 forms_1.FormsModule,
                 http_1.HttpModule,
                 [material_1.MaterialModule],
-                store_1.StoreModule.provideStore(combinedReducer),
+                store_1.StoreModule.provideStore(reducer),
                 effects_1.EffectsModule.run(main_effects_1.MainEffects),
                 store_devtools_1.StoreDevtoolsModule.instrumentOnlyWithExtension(),
                 angularfire2_1.AngularFireModule.initializeApp(exports.firebaseConfig, {

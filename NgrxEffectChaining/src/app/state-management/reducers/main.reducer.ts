@@ -18,6 +18,8 @@ export const mainStoreReducer:ActionReducer<MainState> =
 
       case MainActionTypes.OPEN_DB_SOCKET_SUCCESS:
       {
+
+
         return Object.assign({}, state,
           {adjectiveForJim: action.payload});
       }
@@ -38,6 +40,6 @@ export const mainStoreReducer:ActionReducer<MainState> =
       {
         return state;
       }
-            
+
     }
   };

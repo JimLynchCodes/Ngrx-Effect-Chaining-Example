@@ -50,6 +50,10 @@ var MainEffects = (function () {
                 .flatMap(function (payload) {
                 console.log('got this: ' + JSON.stringify(payload.$value));
                 return rxjs_1.Observable.of(new main_actions_8.OpenDbSocketSuccess(payload.$value));
+            })
+                .catch(function (e) {
+                console.log('open socket failed: ' + e);
+                return rxjs_1.Observable.of(new main_actions_1.OpenDbSocketFail(e));
             });
         });
         this.dbCloseSocket$ = this.action$

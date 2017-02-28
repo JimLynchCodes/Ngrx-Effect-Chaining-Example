@@ -2,7 +2,7 @@ import {Effect, Actions, toPayload} from "@ngrx/effects";
 import {Injectable} from "@angular/core";
 import {Observable} from "rxjs";
 import {AngularFire} from "angularfire2";
-import {MainActionTypes} from "../actions/main.actions";
+import {MainActionTypes, OpenDbSocketFail} from "../actions/main.actions";
 import {SignInSuccess} from "../actions/main.actions";
 import {SignOutSuccess} from "../actions/main.actions";
 import {SignOutBegin} from "../actions/main.actions";
@@ -60,6 +60,10 @@ export class MainEffects {
         .flatMap(payload => {
           console.log('got this: ' + JSON.stringify(payload.$value));
           return Observable.of(new OpenDbSocketSuccess(payload.$value))
+        })
+        .catch(e => {
+          console.log('open socket failed: ' + e);
+          return Observable.of(new OpenDbSocketFail(e))
         })
     );
 

@@ -13,6 +13,11 @@ import {mainStoreReducer} from "./state-management/reducers/main.reducer";
 import {StoreDevtoolsModule} from "@ngrx/store-devtools";
 import {AngularFireModule} from "angularfire2/angularfire2";
 import {AuthProviders, AuthMethods, firebaseAuthConfig} from "angularfire2/index";
+import { compose } from '@ngrx/core/compose';
+import { combineReducers } from '@ngrx/store';
+import {environment} from "../environments/environment";
+import {ActionReducer} from "@ngrx/store";
+import {MainState} from "./state-management/states/main.state";
 
 export const firebaseConfig = {
   apiKey: "AIzaSyC7ndmL9lFiIwoB_aDRsEZ_T4YEXjEKwm4",
@@ -22,8 +27,19 @@ export const firebaseConfig = {
   messagingSenderId: "118259013468"
 };
 
-export function combinedReducer () {
-  return {mainState: mainStoreReducer};
+const reducers = {mainState: mainStoreReducer};
+
+// const developmentReducer: ActionReducer<MainState> = compose(storeFreeze, combineReducers)(reducers);
+const developmentReducer: ActionReducer<MainState> = compose(combineReducers)(reducers);
+const productionReducer: ActionReducer<MainState> = combineReducers(reducers);
+
+export function reducer(state: any, action: any) {
+  if (environment.production) {
+    return productionReducer(state, action);
+  }
+  else {
+    return developmentReducer(state, action);
+  }
 }
 
 @NgModule({
@@ -37,7 +53,7 @@ export function combinedReducer () {
     FormsModule,
     HttpModule,
     [MaterialModule],
-    StoreModule.provideStore(combinedReducer),
+    StoreModule.provideStore(reducer),
     EffectsModule.run(MainEffects),
     StoreDevtoolsModule.instrumentOnlyWithExtension(),
     AngularFireModule.initializeApp(firebaseConfig, {

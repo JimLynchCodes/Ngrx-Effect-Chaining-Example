@@ -1,6 +1,6 @@
 webpackJsonp([2,5],{
 
-/***/ 1142:
+/***/ 1143:
 /***/ (function(module, exports) {
 
 /*
@@ -253,31 +253,24 @@ function updateLink(linkElement, obj) {
 
 /***/ }),
 
-/***/ 1143:
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "bg-texture.jpg";
-
-/***/ }),
-
 /***/ 1147:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(555);
+module.exports = __webpack_require__(556);
 
 
 /***/ }),
 
-/***/ 555:
+/***/ 556:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(880);
+var content = __webpack_require__(881);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // add the styles to the DOM
-var update = __webpack_require__(1142)(content, {});
+var update = __webpack_require__(1143)(content, {});
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -295,22 +288,22 @@ if(false) {
 
 /***/ }),
 
-/***/ 880:
+/***/ 881:
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(881)();
+exports = module.exports = __webpack_require__(882)();
 // imports
 
 
 // module
-exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n\nbody {\n  /*background-color: grey;*/\n  background-image: url(" + __webpack_require__(1143) + ");\n  background-repeat: repeat;\n\n}\n", ""]);
+exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\n\nbody {\n  /*background-color: grey;*/\n  background-image: url(\"https://jimtheman.github.io/Ngrx-Effect-Chaining-Example/bg-texture.jpg\");\n  background-repeat: repeat;\n\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 881:
+/***/ 882:
 /***/ (function(module, exports) {
 
 /*
