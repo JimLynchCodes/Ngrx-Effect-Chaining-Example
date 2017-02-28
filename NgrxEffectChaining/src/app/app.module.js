@@ -27,10 +27,10 @@ exports.firebaseConfig = {
     storageBucket: "chaining-effects-ngrx.appspot.com",
     messagingSenderId: "118259013468"
 };
-function cheese() {
+function combinedReducer() {
     return { mainState: main_reducer_1.mainStoreReducer };
 }
-exports.cheese = cheese;
+exports.combinedReducer = combinedReducer;
 var AppModule = (function () {
     function AppModule() {
     }
@@ -46,7 +46,7 @@ var AppModule = (function () {
                 forms_1.FormsModule,
                 http_1.HttpModule,
                 [material_1.MaterialModule],
-                store_1.StoreModule.provideStore(cheese),
+                store_1.StoreModule.provideStore(combinedReducer),
                 effects_1.EffectsModule.run(main_effects_1.MainEffects),
                 store_devtools_1.StoreDevtoolsModule.instrumentOnlyWithExtension(),
                 angularfire2_1.AngularFireModule.initializeApp(exports.firebaseConfig, {

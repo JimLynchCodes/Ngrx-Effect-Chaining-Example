@@ -6,7 +6,7 @@ import {MaterialModule} from '@angular/material';
 import {AppComponent} from './app.component';
 import {MainEffects} from "./state-management/effects/main.effects";
 import {EffectsModule} from "@ngrx/effects";
-import {ButtonsContainerComponent} from './routes/main/buttons-container/buttons-container.s.component.ts';
+import {ButtonsContainerComponent} from './routes/main/buttons-container/buttons-container.s.component';
 import {ButtonsComponent} from './routes/main/buttons/buttons/buttons.d.component';
 import {StoreModule} from "@ngrx/store";
 import {mainStoreReducer} from "./state-management/reducers/main.reducer";
@@ -22,6 +22,10 @@ export const firebaseConfig = {
   messagingSenderId: "118259013468"
 };
 
+export function combinedReducer () {
+  return {mainState: mainStoreReducer};
+}
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +37,7 @@ export const firebaseConfig = {
     FormsModule,
     HttpModule,
     [MaterialModule],
-    StoreModule.provideStore({mainState: mainStoreReducer}),
+    StoreModule.provideStore(combinedReducer),
     EffectsModule.run(MainEffects),
     StoreDevtoolsModule.instrumentOnlyWithExtension(),
     AngularFireModule.initializeApp(firebaseConfig, {
