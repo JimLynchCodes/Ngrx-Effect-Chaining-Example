@@ -73,6 +73,10 @@ Notice that in the second effect there is no async event taking place and that i
 
 <img src="./screenshots/NgrxEffectChaining_redux_dev_tools.png" alt="Ngrx Effects" width="350px"/>
 
+## Live Demo
+
+You can play around with the live demo here:
+https://jimtheman.github.io/Ngrx-Effect-Chaining-Example/
 
 ## Usage
 
