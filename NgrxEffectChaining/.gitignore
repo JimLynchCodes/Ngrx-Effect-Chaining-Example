@@ -1,6 +1,8 @@
 # Editor configuration, see http://editorconfig.org
 root = true
 
+.idea
+
 [*]
 charset = utf-8
 indent_style = space
