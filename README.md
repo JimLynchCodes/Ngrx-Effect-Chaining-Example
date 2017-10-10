@@ -29,11 +29,8 @@ Take a look at the three effects here:
   dbCloseSocket$ = this.action$
     .ofType(MainActionTypes.CLOSE_DB_SOCKET_BEGIN)
     .mergeMap((g) => {
-
-      console.log('going: ');
       return Observable.of(this.dbSocket.$ref.off())
         .flatMap(payload => {
-          // console.log('got this: ' + JSON.stringify(payload));
           return Observable.of(new CloseDbSocketSuccess())
         })
     });
@@ -51,8 +48,6 @@ Take a look at the three effects here:
   signOut$ = this.action$
     .ofType(MainActionTypes.SIGN_OUT_BEGIN)
     .mergeMap((g) => {
-
-      console.log('going: ');
       return Observable.fromPromise(this.af.auth.logout())
         .flatMap(payload => {
           return Observable.of(new SignOutSuccess())
