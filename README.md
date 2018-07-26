@@ -43,7 +43,6 @@ Take a look at the three effects here:
       Observable.of(new SignOutBegin())
     );
 
-
   @Effect()
   signOut$ = this.action$
     .ofType(MainActionTypes.SIGN_OUT_BEGIN)
