@@ -1,4 +1,11 @@
+
 # Ngrx Effects Chaining Example
+
+## Live Demo
+
+You can play around with the live demo here:
+https://jimtheman.github.io/Ngrx-Effect-Chaining-Example/
+<hr/>
 
 This repo is meant to demonstrate a few things:
 
@@ -66,11 +73,6 @@ I have found that this is the easiest approach for debugging, maintaining the co
 Notice that in the second effect there is no async event taking place and that it's "begin" action and "success" action don't match each other. This is what I call a "chaining effect", and I sometiems refer to it as an "empty effect" beacuse there is no interesting async stuff happening here. It literally just takes in the "CLOSE_DB_SOCKET_SUCCESS" action and returns a "SIGN_OUT_BEGIN" action. When writing our effects in this way we get a very nice "story" of the sequence of actions that are being fired off, and we can see these in the redux chrome extension: 
 
 <img src="./screenshots/NgrxEffectChaining_redux_dev_tools.png" alt="Ngrx Effects" width="350px"/>
-
-## Live Demo
-
-You can play around with the live demo here:
-https://jimtheman.github.io/Ngrx-Effect-Chaining-Example/
 
 ## Usage
 
