@@ -15,7 +15,7 @@ This repo is meant to demonstrate a few things:
 
 <img src="./screenshots/NgrxEffectChaining_front_page.png" alt="Ngrx Effects" width="350px"/>
 
-This is a small and focused demo that begins with only a single button, the login button. Once it is clicked the user is anonymously authenticated through Firebase. Then the text in the middle card should update to display some text from the Firebase database. Once logged in, the user is presented with two other buttons.
+This is a small and focused demo that begins with only a single button, the login button. Once it is clicked the user is anonymously authenticated through Firebase. Then the text in the middle card should update to display some text from the Firebase database. Once logged in the user is presented with two other buttons.
 
 <img src="./screenshots/NgrxEffectChaining_logout_choices.png" alt="Ngrx Effects" width="350px"/>
 
