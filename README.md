@@ -1,12 +1,6 @@
 
 # Ngrx Effects Chaining Example
 
-## Live Demo
-
-You can play around with the live demo here:
-https://jimtheman.github.io/Ngrx-Effect-Chaining-Example/
-<hr/>
-
 This repo is meant to demonstrate a few things:
 
 * "Chaining" Ngrx Effects
